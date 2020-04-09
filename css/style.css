@@ -1,0 +1,135 @@
+.container{
+  width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 20px;
+    align-items: center;
+
+
+}
+#mainicon{
+  font-size: 68px;
+  margin-top: 10px;
+}
+.main,.forecast{
+  margin-bottom: 20px;
+  border: 1px solid #1D1D1B;
+  padding: 18px;
+  font-size: 22px;
+  font-family: 'Josefin Sans', sans-serif;
+  line-height: 1.5;
+  border-radius:6px;
+  color: #fff;
+  max-width: 600px;
+  margin: 20px auto;
+  background-image: linear-gradient(-45deg, #3EB072,#69B84F); 
+}
+.icontemp{
+  font-size: 30px;
+}
+.humi_wind{
+  display: inline-block;
+
+}
+h4{
+  font-family: 'Cairo', sans-serif;
+  text-align: center;
+  color: #FFF;
+}
+.submitform{
+  text-align: center;
+}
+
+.mdl-textfield{
+   max-width: 300px;
+    width: calc(100% - 100px);
+}
+#deletebutton{
+  display: none;
+  margin-bottom: 40px;
+}
+
+.main{
+  display: none;
+}
+.extra{
+  height: 20px;
+}
+.mdl-spinner{
+  display: none;
+}
+.dummy{
+  position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+#splashscreen {
+    position:absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    width:100%;
+    background-color:white;
+    z-index: 9999;
+   
+  }
+#splash{
+font-family: 'Cairo', sans-serif;
+color:#000;
+position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+}
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: #263238;
+   color: white;
+   text-align: center;
+}
+#footerlink>a{
+  
+  color: #fff !important;
+  text-decoration: none !important; 
+}
+#footerlink{
+  padding-top: 15px;
+  font-size: 16px;
+  font-family: 'Asap', sans-serif;
+}
+
+#footerlink>a>img{
+  max-width: 20px;
+}
+#footerlink>a>span{
+  vertical-align: middle;
+}
+
+.heading{
+  color: #FFF;
+  font-size: 20px;
+  font-family: 'Cairo', sans-serif;
+}
+.info{
+  font-size: 25px;
+  text-align: center;
+  color: #000;
+  margin-top: 60px;
+  display: none;
+  color: #FFF;
+  font-family: 'Cairo', sans-serif;
+}
+
+#datetime{
+  color: #FFF;
+  padding: 20px;
+  text-align: right;
+  margin: 0 auto;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 22px;
+}

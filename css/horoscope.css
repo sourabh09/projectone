@@ -1,0 +1,67 @@
+
+.mdl-button{
+  background-color: #EB1537 !important;
+  color: #fff!important; 
+}
+
+.blankdiv{
+  height: 50px;
+}
+
+.fa{
+ color: #f0002f; 
+ padding: 24px;
+ font-size: 30px;
+}
+
+.info{
+  height: 30px;
+}
+
+.dummy{
+  position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+
+#word{
+  line-height: 1.5;
+  margin: 30px;
+  color: #FFF;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 40px;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 18px;
+  text-align: center;
+  background-color: #A8A8A8;
+  border-radius: 10px;
+ 
+
+}
+#word>span{
+  font-size: 28px;
+  text-align: center;
+}
+
+.social>a{
+  color: #000;
+  cursor: pointer;
+}
+.social{
+  text-align: center;
+  display: none;
+
+}
+
+.demo-card-square.mdl-card {
+  width: 320px;
+  height: 320px;
+  margin: 0 auto;
+}
+.demo-card-square > .mdl-card__title {
+  color: #fff;
+  background:
+    url('default.png') bottom right 15% no-repeat #46B6AC;
+}
