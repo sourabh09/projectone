@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="robots" content="index,follow" />
+<meta name="description" content="A MDL weather web app with local storage by QA." />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/css/weather-icons.css" rel="stylesheet" />
+<!-- <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyD98TIgEeJkaKcioLj-s2hgbBeWCV1tUQE"></script> -->
+<link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Damion|Asap" rel="stylesheet">
+<script type="text/javascript" src="https://sourabh09.github.io/mdlweather/crypto.js"></script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.green-amber.min.css" />
+<script src="https://storage.googleapis.com/code.getmdl.io/1.3.0/material.min.js"></script>
+<script src="/js/script.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/commonstyle.css">
+<link rel="apple-touch-icon" href="weather.png">
+<!-- <link rel="shortcut icon" type="image/png" href="weather.png"> -->
+<!-- <meta name="apple-mobile-web-app-capable" content="yes"> -->
+<title>MDL Weather</title>
+</head>
+<body>
+<!-- Always shows a header, even in smaller screens. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title">Title</span>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation. We hide it in small screens. -->
+     <!--  <nav class="mdl-navigation mdl-layout--large-screen-only">
+        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">Link</a>
+      </nav> -->
+    </div>
+  </header>
+  <div class="mdl-layout__drawer">
+    <span style="color:#424242" class="mdl-layout-title">Title</span>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="index.html">Local weather</a>
+      <a class="mdl-navigation__link" href="newsupdates.html">News and updates</a>
+      <a class="mdl-navigation__link" href="randomjoke.html">Random joke</a>
+      <a class="mdl-navigation__link" href="randomquote.html">Random quote</a>
+      <a class="mdl-navigation__link" href="wotd.html">Word of the day</a>
+      <a class="mdl-navigation__link" href="onthisday.html">On this day</a>
+      <!-- <a class="mdl-navigation__link" href="horoscope.html">Horoscope</a> -->
+    </nav>
+  </div>
+  <main class="mdl-layout__content">
+    <div class="page-content">
+    	
+    	<div class="dummy">
+  				<div class="mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active"></div>
+		</div>
+ 		
+ 		<div id="datetime"></div>
+ 		<div id="place" class="container"></div>
+  
+ 		<div class="deletebutton"></div>
+
+ 
+		<div class="extra"></div>
+
+<!-- <div class="footer">
+      <p id="footerlink"> <a target="_blank" href="https://linkedin.com/in/sourabh-mathur-20630223"><img src="linkedin.png">  <span> Sourabh Mathur </span></a></p>
+</div> -->
+
+    </div>
+  </main>
+</div>
+ <!--    <div id="splashscreen">
+      <h4 id="splash">MDL Weather ⛅</h4>
+    </div> -->
+
+
+</body>
+</html>

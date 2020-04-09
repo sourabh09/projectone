@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Random Quote</title>
+ <!--  <meta name="robots" content="index, follow"> -->
+  <meta name="description" content="">
+  <link rel="shortcut icon" href="favicon.ico" />
+  <link rel="apple-touch-icon" href="icon.png">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+ <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Damion" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.green-amber.min.css" />
+  <script src="https://storage.googleapis.com/code.getmdl.io/1.3.0/material.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="/js/randomquotescript.js"></script>
+  <link rel="stylesheet" type="text/css" href="/css/randomquotestyle.css">
+  <link rel="stylesheet" type="text/css" href="/css/commonstyle.css">
+</head>
+<body onload="getData()">
+  <!-- Always shows a header, even in smaller screens. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title">Title</span>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation. We hide it in small screens. -->
+     <!--  <nav class="mdl-navigation mdl-layout--large-screen-only">
+        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">Link</a>
+      </nav> -->
+    </div>
+  </header>
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">Title</span>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="index.html">Local weather</a>
+      <a class="mdl-navigation__link" href="newsupdates.html">News and updates</a>
+      <a class="mdl-navigation__link" href="randomjoke.html">Random joke</a>
+      <a class="mdl-navigation__link" href="randomquote.html">Random quote</a>
+      <a class="mdl-navigation__link" href="wotd.html">Word of the day</a>
+      <a class="mdl-navigation__link" href="onthisday.html">On this day</a>
+     <!--  <a class="mdl-navigation__link" href="horoscope.html">Horoscope</a> -->
+    </nav>
+  </div>
+  <main class="mdl-layout__content">
+    <div class="page-content">
+      
+      <div class="dummy">
+          <div class="mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active"></div>
+    </div>
+
+    <div class="container">
+
+ <div id="advice"></div> 
+<div class="social">
+  
+    <a id="twitterlink" target="_blank" href=""><i class="fa fa-twitter"></i></a>
+    <a id="whatsapplink" target="_blank" href=""><i class="fa fa-whatsapp"></i></a>
+    <i style="cursor: pointer;"onclick="copyToClipboard('#advice')" class="fa fa-clipboard"></i>
+    <i style="cursor: pointer;"onclick="getData()" class="fa fa-refresh"></i>
+
+</div>
+</div>
+
+<!-- <div class="footer">
+      <p id="footerlink"> <a target="_blank" href="https://linkedin.com/in/sourabh-mathur-20630223"><img src="linkedin.png">  <span> Sourabh Mathur </span></a></p>
+</div> -->
+
+    </div>
+  </main>
+</div>
+
+<div class="info"></div>
+</div>
+
+</body>
+ 
+</html>
