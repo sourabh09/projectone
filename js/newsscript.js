@@ -77,7 +77,7 @@ request.onload = function() {
       const img = document.createElement('img')
 
       if(articles.urlToImage==null){
-      	img.setAttribute('src', "/img/default.png")
+      	img.setAttribute('src', "/projectone/img/default.png")
       }else{
       	img.setAttribute('src', articles.urlToImage)
       }
