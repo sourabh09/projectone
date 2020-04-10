@@ -3,6 +3,9 @@ background-color: #000000;
 background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='99' height='99' viewBox='0 0 200 200'%3E%3Cpolygon fill='%23484f57' fill-opacity='0.62' points='100 0 0 100 100 100 100 200 200 100 200 0'/%3E%3C/svg%3E");
 /*background-color: #1D1D1B;*/
 }
+.mdl-layout__drawer{
+  z-index: 6 !important;
+}
 .mdl-layout-title{
 	color: #FFF;
 	 font-family: 'Josefin Sans', sans-serif;
