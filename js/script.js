@@ -183,7 +183,10 @@ $(function() {
           }
         },
         title : {
-          text : ''
+          text : 'Forecast chart',
+          style: {
+                color: 'White'
+            }
         },
         subtitle : {
           text : ''
@@ -191,12 +194,26 @@ $(function() {
         xAxis: {
         
         categories:categories1,
+        labels: {
+            style: {
+                color: 'White'
+            }
+        }
       
       },
+     
         yAxis : {
           title : {
-            text : 'Temperature ( \xB0C)'
+            text : 'Temperature ( \xB0C)',
+            style: {
+                color: 'White'
+            }
           },
+          labels: {
+            style: {
+                color: 'White'
+            }
+        },
          
           max : 60
         },
