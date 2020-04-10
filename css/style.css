@@ -10,6 +10,9 @@
 .highcharts-credits,.highcharts-legend{
   display: none;
 }
+.mdl-layout__drawer{
+  z-index: 6 !important;
+}
 #mainicon{
   font-size: 68px;
   margin-top: 10px;
