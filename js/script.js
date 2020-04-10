@@ -2,6 +2,9 @@ var lat = "";
 var lon = "";
 var fetched_location = "";
 var myArray = ['#F44336', '#009688', '#3F51B5','#4CAF50','#2196F3'];    
+var categories1=[];
+var forecast_high=[];
+var forecast_low=[];
 
 $( document ).ready(function() {
      if (navigator.geolocation) {
@@ -93,30 +96,16 @@ $.ajax({
     var city = data.location.city;
     var region = data.location.region;
     var temp = data.current_observation.condition.temperature;
-
     var description = data.current_observation.condition.text;
     var highlow = data.forecasts[0].high+'\xB0' + units+" / "+data.forecasts[0].low+'\xB0' + units;
     var humidity = data.current_observation.atmosphere.humidity+"%";
     var wind = data.current_observation.wind.speed+"Km/h";
 
-     var day1 = data.forecasts[0].day+" | "+"<i class='wi wi-yahoo-"+ data.forecasts[0].code +"'></i>"+
-  " | "+data.forecasts[0].high+'\xB0' + units+" / "+ data.forecasts[0].low+'\xB0' + units;
+    //alert(data.forecasts.length);
 
-  var day2 = data.forecasts[1].day+" | "+"<i class='wi wi-yahoo-"+ data.forecasts[1].code +"'></i>"+
-  " | "+data.forecasts[1].high+'\xB0' + units+" / "+ data.forecasts[1].low+'\xB0' + units;
+  
+  var bgcolor = myArray[Math.floor(Math.random() * myArray.length)];
 
-  var day3 = data.forecasts[2].day+" | "+"<i class='wi wi-yahoo-"+ data.forecasts[2].code +"'></i>"+
-  " | "+data.forecasts[2].high+'\xB0' + units+" / "+ data.forecasts[2].low+'\xB0' + units;
-
-   var day4 = data.forecasts[3].day+" | "+"<i class='wi wi-yahoo-"+ data.forecasts[3].code +"'></i>"+
-  " | "+data.forecasts[3].high+'\xB0' + units+" / "+ data.forecasts[3].low+'\xB0' + units;
-
- var day5 = data.forecasts[4].day+" | "+"<i class='wi wi-yahoo-"+ data.forecasts[4].code +"'></i>"+
-  " | "+data.forecasts[4].high+'\xB0' + units+" / "+ data.forecasts[4].low+'\xB0' + units;
-
-  var day6 = data.forecasts[5].day+" | "+"<i class='wi wi-yahoo-"+ data.forecasts[5].code +"'></i>"+
-  " | "+data.forecasts[5].high+'\xB0' + units+" / "+ data.forecasts[5].low+'\xB0' + units;
-    var bgcolor = myArray[Math.floor(Math.random() * myArray.length)];
 
 
  //document.getElementById("display").innerHTML += "Places: " +places[i] + "<br/>";
@@ -134,31 +123,31 @@ $.ajax({
 
     );
 
-   $('.container').append(
+   $('.container').append("<div class='forecast'></div>");
 
-    '<div class="forecast"><div class="day1"></div><div class="day2"></div><div class="day3"></div><div class="day4"></div><div class="day5"></div><div class="day6"></div></div>'
+     for (var i=1;i<=data.forecasts.length-1;i++) {
 
-    );
+    categories1.push(data.forecasts[i].day);
+    forecast_high.push(data.forecasts[i].high);  
+    forecast_low.push(data.forecasts[i].low);  
 
-   //$('.container').append("<img src='http://ebulawaa.com/sourabh/terseweather/drop.png'>"+humidity+"%"+" | "+"<img src='http://ebulawaa.com/sourabh/terseweather/wind.png'>"+wind+"Km/h");
-     $('.day2').html(day1);
- $('.day3').html(day2);
- $('.day4').html(day3);
- $('.day5').html(day4);
-  $('.day6').html(day5);
-  $('.day7').html(day6);
-
+    $(".forecast").append(data.forecasts[i].day+" | "+"<i class='wi wi-yahoo-"+ data.forecasts[i].code +"'></i>"+
+" | "+data.forecasts[i].high+'\xB0' + units+" / "+ data.forecasts[i].low+'\xB0' + units+"<br>");
+      
+    }
+   
   $('#place').val("");
   $('.mdl-spinner').css("display","none");
   $('.main').fadeIn();
   $('#deletebutton').css("display","block");
   $('#splashscreen').fadeOut('fast');
+  makegraph()
 
     }
   
 });
 
-    }
+}
 
 //Code for showing date and time
 $( document ).ready(function() {
@@ -177,3 +166,94 @@ return days[d.getDay()]+' '+months[d.getMonth()]+' '+d.getDate()+' '+d.getFullYe
     
 
 });
+function makegraph(){
+$(function() {
+  var chart;
+  categories = categories1;
+    chart = new Highcharts.Chart({
+        chart : {
+          renderTo : 'view',
+          type : 'spline',
+          backgroundColor : {
+            linearGradient : [0, 0, 0, 400],
+            stops : [
+              [0, 'rgba(96, 96, 96,0.4)'],
+              [1, 'rgba(16, 16, 16,0.4)']
+            ]
+          }
+        },
+        title : {
+          text : ''
+        },
+        subtitle : {
+          text : ''
+        },
+        xAxis: {
+        
+        categories:categories1,
+      
+      },
+        yAxis : {
+          title : {
+            text : 'Temperature ( \xB0C)'
+          },
+         
+          max : 60
+        },
+        tooltip : {
+          formatter : function () {
+            return '<b>' + this.series.name + '</b><br/>' +
+            Highcharts.dateFormat('%e. %b', this.x) + this.y + '  \xB0C';
+          }
+        },
+        plotOptions : {
+          area : {
+            lineWidth : 1,
+            marker : {
+              enabled : false,
+              states : {
+                hover : {
+                  enabled : true,
+                  radius : 5
+                }
+              }
+            },
+            shadow : false,
+            states : {
+              hover : {
+                lineWidth : 1
+              }
+            }
+          }
+        },
+        
+        series : [{
+            name : 'High',
+            type : "area",
+            fillColor : {
+              linearGradient : [0, 0, 0, 300],
+              stops : [
+                [0, "#ff0042"],
+                [1, '#24000a']
+              ]
+            },
+            // Define the data points. All series have a dummy year
+            // of 1970/71 in order to be compared on the same x axis. Note
+            // that in JavaScript, months start at 0 for January, 1 for February etc.
+            data : forecast_high
+          },  {
+            name : 'Low',
+            type : "area",
+            fillColor : {
+              linearGradient : [0, 0, 0, 300],
+              stops : [
+                [0, "#00d4ff"],
+                [1, '#020024']
+              ]
+            },
+            data : forecast_low
+          }
+        ]
+      });
+  });
+}
