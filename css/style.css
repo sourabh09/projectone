@@ -7,6 +7,9 @@
 
 
 }
+.highcharts-credits,.highcharts-legend{
+  display: none;
+}
 #mainicon{
   font-size: 68px;
   margin-top: 10px;
