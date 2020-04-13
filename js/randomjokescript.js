@@ -7,6 +7,7 @@ $.getJSON("https://icanhazdadjoke.com/", function(json) {
    $("#quote").html(dadJoke);
    $("#getJoke").css('display','inline-block');
    $(".container").css('display','block');
+   $(".dummy").css('display','none');
       });
 }
   
